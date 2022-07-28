@@ -21,7 +21,7 @@ from sklearn.metrics import (
 from scipy.optimize import brentq
 from sklearn.metrics import roc_curve, roc_auc_score
 import matplotlib.pyplot as plt
-from torchsummary import summary
+#from torchsummary import summary
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
@@ -137,7 +137,7 @@ class VAE_CNN(nn.Module):
         )
         self.bn7 = nn.BatchNorm2d(16)
         self.conv8 = nn.ConvTranspose2d(
-            16, 3, kernel_size=3, stride=2, padding=1, bias=False
+            16, 3, kernel_size=3, stride=2, padding=1, output_padding=1, bias=False
         )
 
         self.relu = nn.ReLU()
